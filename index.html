@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>E-Commerce Website</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/466faac9f0.js" crossorigin="anonymous"></script>
+
+        <style>
+            body {
+                background-color:#e9f6fd;
+                font-family: 'Abril Fatface', cursive;
+            }
+
+            #header {
+                background-color:#000000;
+                height:50vw;
+                text-align:center;
+                padding-top:3vw;
+            }
+
+            #main-title {
+                font-family: 'Noto Serif KR', serif;
+                color:#e9f6fd;
+                font-size:20vw;
+                margin: 0.5vw
+            }
+
+            #sub-title {
+                font-family: 'Abril Fatface', cursive;
+                color:#e9f6fd;
+                font-size:10vw;
+            }
+            
+            #desc{
+                font-family: 'Abril Fatface', cursive;
+                font-size: 4vw;
+                text-align: center;
+                color: #e9f6fd;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:#c6d6d9;
+            }
+
+            li {
+                display:inline;
+            }
+
+            #house-icon, #search-icon, #ellipsis-icon, #cart-icon {
+                color:#000000;
+                font-size:4vw;
+                padding-top:1vw;
+                padding-left:2vw;
+                padding-right:2vw;
+                padding-bottom:1vw;
+            }
+
+            #house-icon, #search-icon, #ellipsis-icon {
+                border-right:1px solid #8b9190;
+            }
+
+            #cart-icon {
+                border-left:1px solid #8b9190;
+                float:right;        
+            }
+
+            #bts-group{
+                margin-left: 35px;
+                margin-top: 30px;
+            }
+
+            #enhypen-group{
+                margin-left: 35px;
+                margin-top: 30px;
+            }
+
+            #itzy-group{
+                margin-left: 35px;
+                margin-top: 30px;
+            }
+
+            #redvel-group{
+                margin-left: 35px;
+                margin-top: 30px;
+            }
+
+            #twice-group{
+                margin-left: 35px;
+                margin-top: 30px;
+            }
+
+            #bts-name{
+                background-color: #c6d6d9;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                width: 160px;
+                font-size: 40px;
+                font-family: 'Noto Serif KR', serif;
+            }
+            
+            #enhypen-name{
+                background-color: #c6d6d9;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                padding-bottom: 10px;
+                width: 340px;
+                font-size: 40px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            #itzy-name{
+                background-color: #c6d6d9;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                padding-bottom: 5px;
+                width: 210px;
+                font-size: 40px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            #redvel-name{
+                background-color: #c6d6d9;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                width: 360px;
+                font-size: 40px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            #twice-name{
+                background-color: #c6d6d9;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+                width: 250px;
+                font-size: 40px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            .bts-logo{
+                margin-left: 20px;
+                padding-bottom: 10px;
+            }
+
+            .enha-logo{
+                margin-left: 15px;
+                padding-bottom: 10px;
+            }
+
+            .itzy-logo{
+                margin-left: 10px;
+                padding-bottom: 5px;
+            }
+
+            .redvel-logo{
+                margin-left: 15px;
+                padding-bottom: 15px;
+            }
+
+            .twice-logo{
+                margin-left: 15px;
+                padding-bottom: 15px;
+            }
+            
+            #enhypen-items{
+                margin-top: 0;
+                display: flex;
+            }
+
+            #itzy-items{
+                margin-top: 0;
+                display: flex;
+            }
+
+            #redvel-items{
+                margin-top: 0;
+                display: flex;
+            }
+
+            #twice-items{
+                margin-top: 0;
+                display: flex;
+            }
+
+            .card{
+                background-color: #c6d6d9;
+                box-shadow: 0 4px 8px 0 rgba(207, 157, 157, 0.2);
+                transition: 0.3s;
+                height: 410px;
+                width: 300px;
+                border-radius: 5px;
+                margin: auto;
+                margin-top: 10px;
+            }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            .container {
+                padding: 2px 16px;
+            }
+
+            .bts-item{
+                margin: auto;
+                border-radius: 10px;
+            }
+
+            .enha-item{
+                margin: auto;
+                border-radius: 10px;
+            }
+
+            .itzy-item{
+                margin: auto;
+                border-radius: 10px;
+            }
+
+            .redvel-item{
+                margin: auto;
+                border-radius: 10px;
+            }
+
+            .twice-item{
+                margin: auto;
+                border-radius: 10px;
+            }
+
+            .item-title{
+                font-family: 'Abril Fatface', cursive;
+                text-align: center;
+                padding-top: 0px;
+            }
+
+            .item-desc{
+                padding-top: 5px;
+                padding-bottom: 0px;
+                text-align: center;
+                font-size: 15px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            .item-price{
+                padding-top: 5px;
+                padding-bottom: 0px;
+                text-align: center;
+                font-size: 25px;
+                font-family: 'Noto Serif KR', serif;
+            }
+
+            button{
+                border: 0px;
+                background-color: transparent;
+                margin: auto;
+            }
+
+            .fa-circle-plus{
+                font-size: 40px;
+            }
+
+            #minus{
+                font-size: 40px;
+            }
+
+            .footer {
+                margin-top: 30px;
+                height:230px;
+                background-color:#c6d6d9;
+                text-align:center;
+                font-family: 'Abril Fatface', cursive;
+                font-size:20px;
+            }
+            
+            .counter {
+                margin: auto;
+                width: 100%;
+            }
+
+          #delivery-details {
+            margin-left:20px;
+          }
+
+          #details, #cart {
+            font-size:50px;
+            margin:15px;
+          }
+
+          label {
+            font-size:20px;
+          }
+
+          .form-control, #submit-button {
+            background-color:#c6d6d9;
+          }
+
+          #submit-button {
+            border:#c6d6d9;
+            border-radius:5px;
+            font-size:20px;
+            margin-top:10px;
+            margin-bottom:20px;
+          }
+
+          .list-group-item {
+            background-color:#c6d6d9;
+          }
+
+          #cart-list {
+            font-family: 'Abril Fatface', cursive;
+            font-size:20px;
+          }
+
+          #total-row {
+            width:100%;
+            font-size:20px;
+            padding:10px;
+            background-color:#474949;
+            color:#ffffff;
+            height:50px;        
+          }
+
+          #total-word {
+            float:left;
+          }
+
+          #parcounter {
+            float:right;
+          }
+        </style>
+        </head>
+
+        <body>
+            <script>
+                window.onscroll = function() {scrollFunction()};
+                
+                function scrollFunction() {
+                    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+                        document.getElementById("header").style.height = "10vw";
+                        document.getElementById("header").style.paddingTop = "1vw";
+                        document.getElementById("main-title").style.fontSize = "5vw";
+                        document.getElementById("sub-title").style.fontSize = "1.5vw";
+                        document.getElementById("desc").style.display = "none";
+                        document.getElementById("nav-bar").style.display = "10vw";
+                    } 
+                }
+                
+                function writeArray() {
+                    document.getElementById('cart-list').innerHTML = "";
+                    for(var i=0; i<cust_order.length; i++){
+                    document.getElementById('cart-list').innerHTML += '<li class="list-group-item"><span class="cart-qty"></span><span class="cart-item">' + '<button class="remove_btn" onclick="reduce(' + i + ')";countUp()><i class="fa fa-minus-circle" onclick="placeholder"></i></button>' + '&nbsp' + cust_order[i].prod_name + '</span>&nbsp;&nbsp;<span class="cart-price">PHP ' + cust_order[i].prod_price + '</span></li>';
+                    }
+                  }
+                
+                function reduce(i) {
+                    cust_order.splice(i,1);
+                    countUp();
+                    writeArray();
+                  }
+                
+                var total = 0;
+                function countUp(){
+                    total = 0;
+                    for(var i=0; i < cust_order.length; i++){
+                        total = total + cust_order[i].prod_price;
+                        document.getElementById('parcounter').innerHTML = total;
+                        }
+                    }
+                
+                var cust_order= []; 
+
+                var bts1 = {
+                    prod_name: "Army Bong",
+                    prod_price: 1500
+                }
+                
+                var bts2 = {
+                    prod_name: "Shooky Plushy",
+                    prod_price: 1000
+                }
+                
+                var bts3 = {
+                    prod_name: "BE Album",
+                    prod_price: 2500
+                }
+                
+                var bts4 = {
+                    prod_name: "MOTS Album",
+                    prod_price: 2500
+                }
+                
+                var bts5 = {
+                    prod_name: "07 Album",
+                    prod_price: 2500
+                }
+                
+                var bts6 = {
+                    prod_name: "BTS Necklace",
+                    prod_price: 1000
+                }
+                
+                var enhypen1 = {
+                    prod_name: "BORDER: Day One Album",
+                    prod_price: 2500
+                }
+                
+                var enhypen2 = {
+                    prod_name: "BORDER: Carnival Album",
+                    prod_price: 2500
+                }
+                
+                var enhypen3 = {
+                    prod_name: "Dimension:Dilemma Album",
+                    prod_price: 2500
+                }
+                
+                var enhypen4 = {
+                    prod_name: "Engene Bong",
+                    prod_price: 1500
+                }
+                
+                var enhypen5 = {
+                    prod_name: "Bucket Hats",
+                    prod_price: 1000
+                }
+                
+                var enhypen6 = {
+                    prod_name: "Ggu Ggu Package 2022",
+                    prod_price: 2500
+                }
+                
+                var itzy1 = {
+                    prod_name: "ITZ ME Album",
+                    prod_price: 2500
+                }
+                
+                var itzy2 = {
+                    prod_name: "ITZY Light Ring",
+                    prod_price: 1000
+                }
+                
+                var itzy3 = {
+                    prod_name: "Voltage Cropped Hoodie",
+                    prod_price: 1000
+                }
+                
+                var itzy4 = {
+                    prod_name: "ITZY Pillowcase",
+                    prod_price: 1000
+                }
+                
+                var itzy5 = {
+                    prod_name: "ITZY Hoodie",
+                    prod_price: 1000
+                }
+                
+                var itzy6 = {
+                    prod_name: "ITZY Phone Case",
+                    prod_price: 1000
+                }
+                
+                var rv1 = {
+                    prod_name: "The ReVe Festival: Day 1",
+                    prod_price: 2500
+                }
+                
+                var rv2 = {
+                    prod_name: "The ReVe Festival: Day 2",
+                    prod_price: 2500
+                }
+                
+                var rv3 = {
+                    prod_name: "The ReVe Festival: Finale",
+                    prod_price: 2500
+                }
+                
+                var rv4 = {
+                    prod_name: "Red Velvet Fanlight",
+                    prod_price: 1500
+                }
+                
+                var rv5 = {
+                    prod_name: "Red Velvet Finale Hoodie",
+                    prod_price: 1000
+                }
+                
+                var rv6 = {
+                    prod_name: "Red Velvet Merch",
+                    prod_price: 1000
+                }
+                
+                var twice1 = {
+                    prod_name: "Formula of Love: O+T=<3 Album",
+                    prod_price: 2500
+                }
+                
+                var twice2 = {
+                    prod_name: "Yes Or Yes Album",
+                    prod_price: 2500
+                }
+                
+                var twice3 = {
+                    prod_name: "Taste Of Love Album",
+                    prod_price: 2500
+                }
+                
+                var twice4 = {
+                    prod_name: "Feel Special Album",
+                    prod_price: 2500
+                }
+                
+                var twice5 = {
+                    prod_name: "Candybong Z",
+                    prod_price: 1500
+                }
+                
+                var twice6 = {
+                    prod_name: "Dahyun Photobook",
+                    prod_price: 1000
+                }
+            
+                function cart1(){
+                    cust_order.push(bts1);
+                    writeArray();
+                }
+                
+                function cart2(){
+                    cust_order.push(bts2);
+                    writeArray();
+                }
+                
+                function cart3(){
+                    cust_order.push(bts3);
+                    writeArray();
+                }
+                
+                function cart4(){
+                    cust_order.push(bts4);
+                    writeArray();
+                }
+                
+                function cart5(){
+                    cust_order.push(bts5);
+                    writeArray();
+                }
+                
+                function cart6(){
+                    cust_order.push(bts6);
+                    writeArray();
+                }
+                
+                function cart7(){
+                    cust_order.push(enhypen1);
+                    writeArray();
+                }
+                
+                function cart8(){
+                    cust_order.push(enhypen2);
+                    writeArray();
+                }
+                
+                function cart9(){
+                    cust_order.push(enhypen3);
+                    writeArray();
+                }
+                
+                function cart10(){
+                    cust_order.push(enhypen4);
+                    writeArray();
+                }
+                
+                function cart11(){
+                    cust_order.push(enhypen5);
+                    writeArray();
+                }
+                
+                function cart12(){
+                    cust_order.push(enhypen6);
+                    writeArray();
+                }
+                
+                function cart13(){
+                    cust_order.push(itzy1);
+                    writeArray();
+                }
+                
+                function cart14(){
+                    cust_order.push(itzy2);
+                    writeArray();
+                }
+                
+                function cart15(){
+                    cust_order.push(itzy3);
+                    writeArray();
+                }
+                
+                function cart16(){
+                    cust_order.push(itzy4);
+                    writeArray();
+                }
+                
+                function cart17(){
+                    cust_order.push(itzy5);
+                    writeArray();
+                }
+                
+                function cart18(){
+                    cust_order.push(itzy6);
+                    writeArray();
+                }
+                
+                function cart19(){
+                    cust_order.push(rv1);
+                    writeArray();
+                }
+                
+                function cart20(){
+                    cust_order.push(rv2);
+                    writeArray();
+                }
+                
+                function cart21(){
+                    cust_order.push(rv3);
+                    writeArray();
+                }
+                
+                function cart22(){
+                    cust_order.push(rv4);
+                    writeArray();
+                }
+                
+                function cart23(){
+                    cust_order.push(rv5);
+                    writeArray();
+                }
+                
+                function cart24(){
+                    cust_order.push(rv6);
+                    writeArray();
+                }
+                
+                function cart25(){
+                    cust_order.push(twice1);
+                    writeArray();
+                }
+                
+                function cart26(){
+                    cust_order.push(twice2);
+                    writeArray();
+                }
+                
+                function cart27(){
+                    cust_order.push(twice3);
+                    writeArray();
+                }
+                
+                function cart28(){
+                    cust_order.push(twice4);
+                    writeArray();
+                }
+                
+                function cart29(){
+                    cust_order.push(twice5);
+                    writeArray();
+                }
+                
+                function cart30(){
+                    cust_order.push(twice6);
+                    writeArray();
+                }
+
+                function Items(){
+                    cust_order = JSON.stringify(cust_order); 
+                    document.getElementById("cust_order").value = cust_order; 
+                }
+
+                var cust_order = JSON.parse(co);
+                    for(co of cust_order) {
+                        document.write('<li class="list-group-item"><h6>' + co.prod_name + '</h6><p>' + f.format(co.prod_price) + '</p></li>');
+                        totalcost += co.prod_price;
+                    }
+            </script>
+
+            <div id="header">
+                <h1 id="main-title">
+                    피곤해요
+                </h1>
+                <h1 id="sub-title">
+                    KPOP BOUTIQUE
+                </h1>
+                <h3 id="desc">안녕 pagoude naure kameigh!</h3>
+            </div>
+            <div id="nav-bar">
+                <ul>
+                    <li><a href="index.html"><i id="house-icon" class="fa-solid fa-house"></i></a></li>
+                    <li><a href="#"><i id="search-icon" class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="authorPage.html"><i id="ellipsis-icon" class="fa-solid fa-ellipsis"></i></a></li>
+                    <li><a href="#"><i id="cart-icon" class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+            </div>
+
+            <div id="bts-group">
+                <h3 id="bts-name">BTS<img class="bts-logo" src="img/bts-logo.png" alt="BTS Logo" width="40"></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-1" class="card">
+                        <img class="bts-item" src="img/armybong.jpg" alt="Army Bong" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Army Bong</b></h4>
+                            <p class="item-desc">Keep this lighstick ON and colorful for BTS!</p>
+                            <p class="item-price">Php1500</p>
+                            <button class="counter" onclick="cart1();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-2" class="card">
+                        <img class="bts-item" src="img/shooky.jpg" alt="Shooky" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Shooky Plushy</b></h4>
+                            <p class="item-desc">Cuddle in with a pillow made by your IDOL!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart2();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-3" class="card">
+                        <img class="bts-item" src="img/be-album.jpeg" alt="BE Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>BE Album</b></h4>
+                            <p class="item-desc">Listen, sing-along and BE with BTS!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart3();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-4" class="card">
+                        <img class="bts-item" src="img/persona-album.jpeg" alt="Persona Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>MOTS Album</b></h4>
+                            <p class="item-desc">Listen and dance-along WITH LUV!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart4();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-5" class="card">
+                        <img class="bts-item" src="img/07-album.jpg" alt="07 Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>07 Album</b></h4>
+                            <p class="item-desc">Listen and sing-along with your FRIENDS!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart5();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-6" class="card">
+                        <img class="bts-item" src="img/stonehenge.png" alt="Stonehenge Necklace" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>BTS Necklace</b></h4>
+                            <p class="item-desc">A little bling from BTS' MAGIC SHOP!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart6();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="enhypen-group">
+                <h3 id="enhypen-name">ENHYPEN<img class="enha-logo" src="img/enhypen-logo.png" alt="Enhypen Logo" width="100"></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-7" class="card">
+                        <img class="enha-item" src="img/border1-album.jpg" alt="Border: Day One" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Border: Day One Album</b></h4>
+                            <p class="item-desc">Wake up on day one with dusk and dawn poster versions!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart7();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-8" class="card">
+                        <img class="enha-item" src="img/border2-album.jpg" alt="Border: Carnival" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Border: Carnival Album</b></h4>
+                            <p class="item-desc">Buy all 3 and watch your face light up with glee.</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart8();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-9" class="card">
+                        <img class="enha-item" src="img/dilemma-album.jpg" alt="Dimension: Dilemma Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>D:D Album</b></h4>
+                            <p class="item-desc">Buy this and it will be your only dilemma.</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart9();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-10" class="card">
+                        <img class="enha-item" src="img/enhypen-light.jpg" alt="Enhypen Light Stick" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Engene Bong</b></h4>
+                            <p class="item-desc">Light up your life with this Enha Bong!</p>
+                            <p class="item-price">Php1500</p>
+                            <button class="counter" onclick="cart10();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-11" class="card">
+                        <img class="enha-item" src="img/enhypen-buckethat.jpg" alt="Enhypen Bucket Hat" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Enhypen Bucket Hat</b></h4>
+                            <p class="item-desc">Bucket ka pa nag-aalinlangan? Bili na ng bucket hats!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart11();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-12" class="card">
+                        <img class="bts-item" src="img/gguggu-package.png" alt="Ggu Ggu Package 2022" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Ggu Ggu Package 2022</b></h4>
+                            <p class="item-desc">Can't find a whole package man? We gotchu with Ggu Ggu Package.</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart12();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="itzy-group">
+                <h3 id="itzy-name">ITZY<img class="itzy-logo" src="img/itzy-logo.png" alt="Itzy Logo" width="90"></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-13" class="card">
+                        <img class="itzy-item" src="img/itzme-album.jpg" alt="It'z Me Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>It'z Me Album</b></h4>
+                            <p class="item-desc">You can break your shoulders dancing to Wannabe!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart13();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-14" class="card">
+                        <img class="itzy-item" src="img/itzy-lightring.png" alt="ITZY Light Ring" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ITZY Light Ring</b></h4>
+                            <p class="item-desc">Light this ring up and don't give a what!</p>
+                            <p class="item-price">Php1500</p>
+                            <button class="counter" onclick="cart14();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-15" class="card">
+                        <img class="itzy-item" src="img/itzy-hoodie.gif" alt="Voltage Hoodie" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Voltage Hoodie</b></h4>
+                            <p class="item-desc">Something to wear to definitely “burn up!” during the summer!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart15();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-16" class="card">
+                        <img class="itzy-item" src="img/itzy-pillow.jpg" alt="ITZY Pillowcase" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ITZY Pillowcase</b></h4>
+                            <p class="item-desc">Something to lay on so that your scalp doesn't get ITCHYYYY!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart16();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-17" class="card">
+                        <img class="itzy-item" src="img/cil-album.jpg" alt="Crazy In Love Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Crazy In Love Album</b></h4>
+                            <p class="item-desc">A tracklist of songs that would make you go LOCO!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart17();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-18" class="card">
+                        <img class="itzy-item" src="img/itzy-phonecase.jpg" alt="ITZY Phone Case" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ITZY Phone Case</b></h4>
+                            <p class="item-desc">When someone calls your phone, you'll have to “guess who” it is.</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart18();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="redvel-group">
+                <h3 id="redvel-name">RED VELVET<img class="redvel-logo" src="img/redvel-logo.png" alt="Red Velvet Logo" width="70"></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-19" class="card">
+                        <img class="redvel-item" src="img/reve1-album.jpg" alt="ReVe Festival: Day 1" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ReVe Festival: Day 1</b></h4>
+                            <p class="item-desc">Are you ready for this? Zimzalabim!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart19();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-20" class="card">
+                        <img class="redvel-item" src="img/reve2-album.jpg" alt="ReVe Festival: Day 2" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ReVe Festival: Day 2</b></h4>
+                            <p class="item-desc">Sick of the heat? Dive in and jam to Red Velvet's “Umpah umpah”!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart20();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-21" class="card">
+                        <img class="redvel-item" src="img/reve3-album.jpeg" alt="ReVe Festival: Finale" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ReVe Festival: Finale</b></h4>
+                            <p class="item-desc">Listen and go crazy to Red Velvet's hit song “Psycho”!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart21();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-22" class="card">
+                        <img class="redvel-item" src="img/redvel-lighstick.jpg" alt="Red Velvet Lighstick" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Red Velvet Fanlight</b></h4>
+                            <p class="item-desc">Light up the world between you and me, and get your Fanlight!</p>
+                            <p class="item-price">Php1500</p>
+                            <button class="counter" onclick="cart22();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-23" class="card">
+                        <img class="redvel-item" src="img/redvel-shirt.jpg" alt="Red Velvet Finale Shirt" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>ReVe Festival: T-Shirt</b></h4>
+                            <p class="item-desc">Want to be trendy? We've got you covered with this Finale shirt!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart23();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-24" class="card">
+                        <img class="redvel-item" src="img/redvel-sweatshirt.jpg" alt="Red Velvet Sweatshirt" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>La Rouge: Sweatshirt</b></h4>
+                            <p class="item-desc">Want to look comfy? We present you this La Rouge sweatshirt!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart24();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="twice-group">
+                <h3 id="twice-name">TWICE<img class="twice-logo" src="img/twice-logo.png" alt="Twice Logo" width="70"></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-25" class="card">
+                        <img class="twice-item" src="img/fol-album.jpg" alt="Formula of Love Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Formula of Love Album</b></h4>
+                            <p class="item-desc">We love women in STEM! Check out TWICE's Formula of Love!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart25();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-26" class="card">
+                        <img class="twice-item" src="img/yesoryes-album.jpg" alt="Yes or Yes Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Yes or Yes Album</b></h4>
+                            <p class="item-desc">New to TWICE? This album can get you singing LALALA!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart26();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-27" class="card">
+                        <img class="twice-item" src="img/tasteoflove-album.jpg" alt="Taste of Love Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Taste of Love Album</b></h4>
+                            <p class="item-desc">Taste the summer breeze as we get drunk in love to TWICE's album!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart27();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div id="item-28" class="card">
+                        <img class="twice-item" src="img/feelspecial-album.jpg" alt="Feel Special Album" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Feel Special Album</b></h4>
+                            <p class="item-desc">Listen to TWICE's 2019 album to make you Feel Special!</p>
+                            <p class="item-price">Php2500</p>
+                            <button class="counter" onclick="cart28();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-29" class="card">
+                        <img class="twice-item" src="img/twice-lightstick.jpg" alt="Candy Bong" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>Candy Bong Z</b></h4>
+                            <p class="item-desc">It isn't a TWICE concert without a Candybong Z! Get yours today!</p>
+                            <p class="item-price">Php1500</p>
+                            <button class="counter" onclick="cart29();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div id="item-30" class="card">
+                        <img class="twice-item" src="img/photobook.jpg" alt="Twice Photobook" width="200">
+                        <div class="container">
+                            <h4 class="item-title"><b>TWICE Photobook</b></h4>
+                            <p class="item-desc">Get inventor of the Dahyun Drop's photobook “Yes, I am Dahyun”!</p>
+                            <p class="item-price">Php1000</p>
+                            <button class="counter" onclick="cart30();countUp()"><i class="fa-solid fa-circle-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="container-fluid row" id="body">
+            <div class="col-sm-7" id="delivery-details">
+              <h2 id="details">DETAILS</h2>
+              <form method="get" action="http://sirjm.infinityfreeapp.com/checkout.php" id="add-details">
+                <div class="col-sm-11 form-group">
+                  <label for="cust_name">Name</label>
+                  <input class="form-control" type="text" name="cust_name" id="cust_name">
+                </div>
+                <div class="col-sm-11 form-group">
+                  <label for="cust_email">Email</label>
+                  <input class="form-control" type="email" name="cust_email" id="cust_email">
+                </div>
+                <div class="col-sm-11 form-group">
+                  <label for="cust_addr">Address</label>
+                  <input class="form-control" type="text" name="cust_addr" id="cust_addr">
+                </div>
+                <div class="col-sm-11">
+                  <input type="hidden" id="cust_order" name="cust_order">
+                  <input id="submit-button" type="submit" value="Place Order" onclick="Items();">
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-4">
+              <h2 id="cart">CART</h2>
+              <ul class="list-group" id="cart-list"></ul>
+              <script>writeArray();</script>
+              <div id="total-row">
+                <div id="total-word">TOTAL</div>
+                <div id="parcounter">0</div>
+              </div>
+            </div>
+          </div>
+
+            <div class="footer">
+                <p>
+                    <br>
+                    &copy; Copyright 2022 <strong>피곤해요</strong> Company<br>
+                    @butikpopagodhaeyo <br>
+                    <i class="fa-solid fa-location-dot"></i> 218 Yeourseo Road Balete Drive Sapusomo Province Philippines
+                </p>
+            </div>
+    </body>
+</html>
